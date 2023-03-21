@@ -1,5 +1,5 @@
 class Api::FightersController < ApplicationController
-  before_action :set_fighter, only: [:show, :update, :destroy]
+  before_action :set_fighter, only: %i[show update destroy]
 
   # GET /fighters
   def index
@@ -39,13 +39,14 @@ class Api::FightersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_fighter
-      @fighter = Fighter.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def fighter_params
-      params.require(:fighter).permit(:name, :health)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_fighter
+    @fighter = Fighter.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def fighter_params
+    params.require(:fighter).permit(:name, :health, :attack_power)
+  end
 end

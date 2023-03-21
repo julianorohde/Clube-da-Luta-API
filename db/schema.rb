@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_16_203340) do
+ActiveRecord::Schema.define(version: 2023_03_21_213121) do
 
   create_table "fighters", force: :cascade do |t|
     t.string "name"
     t.integer "health"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "attack_power"
+    t.integer "defense_power"
+    t.index ["attack_power"], name: "index_fighters_on_attack_power"
+    t.index ["defense_power"], name: "index_fighters_on_defense_power"
   end
 
   create_table "powers", force: :cascade do |t|
     t.string "name"
     t.integer "damage"
     t.integer "cooldown"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
