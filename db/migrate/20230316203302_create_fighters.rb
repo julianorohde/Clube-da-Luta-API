@@ -4,7 +4,7 @@ class CreateFighters < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :health
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

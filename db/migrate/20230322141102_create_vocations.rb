@@ -3,7 +3,7 @@ class CreateVocations < ActiveRecord::Migration[6.1]
     create_table :vocations do |t|
       t.string :name
 
-      t.timestamps
+      #t.timestamps
     end
   end
 end

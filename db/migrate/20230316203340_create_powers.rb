@@ -5,7 +5,7 @@ class CreatePowers < ActiveRecord::Migration[6.1]
       t.integer :damage
       t.integer :cooldown
 
-      t.timestamps
+      # t.timestamps
     end
   end
 end

@@ -47,6 +47,6 @@ class Api::FightersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def fighter_params
-    params.require(:fighter).permit(:name, :health, :attack_power)
+    params.require(:fighter).permit(:name, :health, :vocation_id)
   end
 end
