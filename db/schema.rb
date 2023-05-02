@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_24_224559) do
+ActiveRecord::Schema.define(version: 2023_04_28_212455) do
 
   create_table "fighters", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.integer "health"
     t.bigint "vocation_id"
+    t.integer "attack_power"
+    t.integer "defense_power"
+    t.index ["attack_power"], name: "index_fighters_on_attack_power"
+    t.index ["defense_power"], name: "index_fighters_on_defense_power"
     t.index ["vocation_id"], name: "index_fighters_on_vocation_id"
   end
 
